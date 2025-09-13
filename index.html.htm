@@ -1,201 +1,112 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Untitled</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Practice Examination</title>
-
-  <link rel="stylesheet" href="styles.css">
-
-  <link rel="manifest" href="/manifest.json">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>University of Ibadan ExamGuard - Coming Soon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2282/2282759.png">
   <style>
-
-    .hidden {
-
-      display: none;
-
+    html { scroll-behavior: smooth; }
+    .highlight {
+      background: linear-gradient(90deg, #38bdf8 40%, #2563eb 100%);
+      background-size: 200% 100%;
+      background-position: 0 100%;
+      color: #fff;
+      padding: 0 0.4em;
+      border-radius: 0.5em;
+      animation: highlight 2.5s ease-in-out infinite alternate;
     }
-
+    @keyframes highlight {
+      0% { background-position: 0 100%; }
+      100% { background-position: 100% 100%; }
+    }
+    .glass {
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+      backdrop-filter: blur(7px);
+      border-radius: 1.25em;
+      border: 1.5px solid rgba(56,189,248,0.18);
+    }
+    .floating-svg {
+      animation: float 2.3s ease-in-out infinite alternate;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-22px); }
+    }
   </style>
-
 </head>
+<body class="bg-gradient-to-tr from-blue-100 via-cyan-100 to-blue-50 min-h-screen flex flex-col">
 
-<body>
-
-  <header>
-
-  <h1>OAU EXAMINATION UNIT</h1>
-
-  </header>
-
-  <main>
-
-  <div class="content">
-
-<img src="https://networks.au-ibar.org/show/obafemi-awolowo-university-ife-nigeria/wiki-image/AU+REC+logos+%2841%29.png" alt="Logo" class="logo">
-
-  </div>
-
-    <div class="overlay" id="overlay"> 
-
-        <div class="container" id="loginContainer">
-            <h2>Login</h2>
-          <div class="content">
-
-<img src="https://networks.au-ibar.org/show/obafemi-awolowo-university-ife-nigeria/wiki-image/AU+REC+logos+%2841%29.png" alt="Logo" class="logo">
-
-          </div>
-            <form id="loginForm">
-                <input type="text" id="loginUsername" placeholder="Username" required>
-                <input type="password" id="loginPassword" placeholder="Password" required>
-                <button type="button" id="loginBtn">Login</button>
-                <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
-                <p><a href="#" id="goToRegister">New user? Register here</a></p>
-            </form>
-        </div>
-
-        <div class="container hidden" id="registerContainer">
-            <h2>Register</h2>
-            <form id="registerForm">
-                <input type="text" id="regUsername" placeholder="Username" required>
-                <input type="password" id="regPassword" placeholder="Password" required>
-                <input type="text" id="securityQuestion" placeholder="Security Question" required>
-                <input type="text" id="securityAnswer" placeholder="Answer" required>
-                <input type="text" id="accessCode" placeholder="Access Code" required>
-                <button type="button" id="registerBtn">Register</button>
-                <p><a href="#" id="goToLogin">Back to Login</a></p>
-            </form>
-        </div>
-
-        <div class="container hidden" id="recoverContainer">
-            <h2>Recover Password</h2>
-            <form id="recoverForm">
-                <input type="text" id="recoverUsername" placeholder="Username" required>
-                <input type="text" id="recoverAnswer" placeholder="Security Answer" required>
-                <button type="button" id="recoverBtn">Recover</button>
-                <p><a href="#" id="backToLogin">Back to Login</a></p>
-            </form>
-        </div>
+  <!-- Hero Section -->
+  <section class="relative flex-1 flex flex-col justify-center items-center px-4 py-12 md:py-24 overflow-hidden">
+    <!-- Floating SVGs -->
+    <svg class="absolute left-10 top-10 w-16 h-16 floating-svg opacity-80" fill="none" viewBox="0 0 64 64">
+      <rect x="8" y="20" width="48" height="24" rx="6" fill="#2563eb" />
+      <rect x="20" y="28" width="24" height="8" rx="3" fill="#38bdf8"/>
+    </svg>
+    <svg class="absolute right-12 top-32 w-20 h-20 floating-svg opacity-90" fill="none" viewBox="0 0 80 80">
+      <ellipse cx="40" cy="40" rx="32" ry="18" fill="#38bdf8"/>
+      <rect x="20" y="34" width="40" height="12" rx="6" fill="#2563eb" />
+    </svg>
+    <svg class="absolute left-16 bottom-10 w-12 h-12 floating-svg opacity-60" fill="none" viewBox="0 0 48 48">
+      <rect x="8" y="16" width="32" height="16" rx="4" fill="#e0f2fe"/>
+      <circle cx="24" cy="24" r="8" fill="#2563eb" />
+    </svg>
+    <!-- Glass Card Content -->
+    <div class="glass max-w-xl w-full mx-auto px-6 py-10 flex flex-col items-center text-center relative z-10">
+      <img src="https://cdn-icons-png.flaticon.com/512/2282/2282759.png" class="h-14 mb-3" alt="UI ExamGuard Logo">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4 leading-tight">
+        <span class="highlight">University of Ibadan</span><br>
+        ExamGuard is Coming!
+      </h1>
+      <p class="text-blue-800 text-lg mb-8">Prepare, practice, and connect for exam success at UI. <br class="hidden sm:inline" /> The next generation campus exam companion launches soon!</p>
+      <a href="#notify" class="px-8 py-4 bg-gradient-to-r from-blue-700 to-cyan-500 text-white font-bold rounded-xl shadow-md hover:bg-blue-800 transition text-lg mb-2">
+        Get Early Access
+      </a>
+      <span class="text-blue-800/70 text-sm mt-2">Beta coming for UI students. Don’t miss out!</span>
     </div>
+  </section>
 
-    
-    <div id="notification-center" class="popup hidden">
-  <div class="popup-content">
-    <h2>Welcome to Your Assessment</h2>
-    <p>Before starting your exam, please read the following instructions carefully:</p>
-    <ul>
-      <li>Each question must be answered before proceeding to the next.</li>
-      <li>Once you complete all questions, your answers will be automatically submitted.</li>
-      <li>Ensure you are in a quiet environment for better concentration.</li>
-      <li>You can retake the same questions only after completing the entire question bank.</li>
-      <li>Stay within the time limit displayed at the top of your screen.</li>
-    </ul>
-    <button id="close-notification" class="primary">Got it, Start!</button>
-  </div>
-</div>
-
-    <section id="course-selection-section">
-
-      <h3>Select a Department to Practice Related Exam Questions</h3>
-
-      <div id="courses-container">
-
-        <button class="course" data-course="Mathematics">Mathematics</button>
-        
-
-        <button class="course" data-course="Chemistry">Chemistry</button>
-        
-        
-
-        <button class="course" data-course="Biology">Biology</button>
-
-        <button class="course" data-course="Botany">Botany</button>
-
-        <button class="course" data-course="Microbiology">Microbiology</button>
-
-        <button class="course" data-course="Physics">Physics</button>
-
-        <button class="course" data-course="Zoology">Zoology</button>
-
+  <!-- Features Section -->
+  <section id="features" class="max-w-5xl mx-auto px-4 py-12">
+    <h2 class="text-center text-3xl font-bold text-blue-900 mb-10">Why You'll Love ExamGuard</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow hover:shadow-xl p-7 flex flex-col items-center text-center border-t-4 border-blue-400">
+        <svg class="mb-4" width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#38bdf8"/><path d="M24 18v12M24 30v2M18 24h12" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3 class="font-bold text-lg mb-2 text-blue-800">Past Questions</h3>
+        <p class="text-blue-900/80">Practice UI exam archives, get instant feedback, and boost your grades.</p>
       </div>
-
-    </section>
-
-    <section id="access-code-section" class="hidden">
-
-      <h2 id="selected-course-title">Enter Access Code for course under</h2>
-
-      <input type="text" id="access-code" placeholder="Enter your access code">
-
-
-      <button id="submit-code">Submit</button>
-      <button id="cancel-button">Cancel</button>
-
-    </section>
-
-    <section id="exam-section" class="hidden">
-
-      <h2 id="subject-title">Subject Title</h2>
-
-      <div id="question-container">
-
-        <p id="question-text">Question will appear here...</p>
-
-        <div id="options-container"></div>
-
+      <div class="bg-white rounded-xl shadow hover:shadow-xl p-7 flex flex-col items-center text-center border-t-4 border-cyan-400">
+        <svg class="mb-4" width="48" height="48" fill="none" viewBox="0 0 48 48"><rect x="12" y="18" width="24" height="12" rx="6" fill="#38bdf8"/><rect x="18" y="24" width="12" height="6" rx="3" fill="#2563eb"/></svg>
+        <h3 class="font-bold text-lg mb-2 text-blue-800">Campus Community</h3>
+        <p class="text-blue-900/80">Share hacks, ask questions, and succeed together with UI students.</p>
       </div>
-
-      <div id="navigation">
-
-        <button id="prev-question" disabled>Previous</button>
-
-        <button id="next-question">Next</button>
-
-        <button id="end-exam">Submit Exam</button>
-
+      <div class="bg-white rounded-xl shadow hover:shadow-xl p-7 flex flex-col items-center text-center border-t-4 border-blue-600">
+        <svg class="mb-4" width="48" height="48" fill="none" viewBox="0 0 48 48"><path d="M24 12l8 16H16l8-16z" fill="#38bdf8"/><circle cx="24" cy="36" r="4" fill="#2563eb"/></svg>
+        <h3 class="font-bold text-lg mb-2 text-blue-800">Smart Study Tools</h3>
+        <p class="text-blue-900/80">Reminders, analytics, notes, and more to help you stay ahead.</p>
       </div>
+    </div>
+  </section>
 
-      <div id="progress-container"></div>
+  <!-- Notify Section -->
+  <section id="notify" class="bg-gradient-to-tr from-blue-100 via-cyan-50 to-blue-50 py-10 px-4 mt-auto">
+    <div class="max-w-xl mx-auto text-center glass py-8 px-6">
+      <h2 class="text-2xl font-bold text-blue-900 mb-3">Stay Updated!</h2>
+      <p class="text-blue-800 mb-6">Drop your email and be the first to know when UI ExamGuard launches.</p>
+      <form class="flex flex-col sm:flex-row gap-3 items-center justify-center">
+        <input type="email" placeholder="your@email.com" class="px-5 py-3 w-full sm:w-auto rounded-lg border border-blue-200 focus:border-blue-500 focus:outline-none text-blue-900" required />
+        <button type="submit" class="px-6 py-3 bg-gradient-to-r from-blue-700 to-cyan-500 text-white font-bold rounded-lg shadow hover:bg-blue-800 transition">Notify Me</button>
+      </form>
+    </div>
+  </section>
 
-    </section>
-
-    <section id="summary-section" class="hidden">
-
-      <h2>Summary</h2>
-
-      <div id="summary-content"></div>
-
-      <button id="restart-exam">Restart Exam</button>
-
-    </section>
-
-  </main>
-
-
-  <script src="script.js"></script>
-
-</body>
-
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
+  <!-- Footer -->
+  <footer class="bg-blue-900/90 border-t border-blue-100 py-6 mt-10 text-center text-white text-sm">
+    <span class="font-bold text-cyan-300">University of Ibadan ExamGuard</span> &mdash; launching soon. <br>
+    &copy; 2025 All rights reserved.
+  </footer>
 </body>
 </html>
